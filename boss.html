@@ -14,52 +14,103 @@
 
 
 
-    //////////////////////////  BOSS LEVEL
+//////////////////////////  BOSS LEVEL
+    class Boss extends Phaser.Scene {
 
-
-
-var game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update });
+constructor(){
+    super("Boss");
 
 function preload() {
 
-   game.load.spritesheet('bomb', 'dodatki/bomb.png', 32, 32);
-
+this.load.image('bomb', 'dodatki/bomb.png');
+this.load.image("sky", "dodatki/sky.png");
+this.load.spritesheet("dude", "dodatki/dude.png", { frameWidth: 30, frameHeight: 48 });
 }
 
-var sprites;
+
 
 function create() {
+    let sky = this.add.image(400, 300, "sky").setScale(2);
+//sky.destroy();
 
-    //  Here we create a group, populate it with sprites, give them all a random velocity
-    //  and then check the group against itself for collision
+ this.sprites = this.add.physicsGroup(Phaser.Physics.ARCADE);
+ this.arrow = this.input.keyboard.addKeys("W, A, D, S");
+ this.player = this.physics.add.sprite(600, 515, "dude");
 
-    sprites = game.add.physicsGroup(Phaser.Physics.ARCADE);
+ this.bomb = this.physics.add.group({
+key: 'bomb',
+repeat: 12,
+setXY: { x: 50, y: 10, stepX: 70 }
+});
 
-    for (var i = 0; i < 90; i++)
-    {
-        var s = sprites.create(game.rnd.integerInRange(100, 700), game.rnd.integerInRange(32, 200), 'spinner');
-        s.animations.add('spin', [0, 1, 2, 3]);
-        s.play('spin', 20, true);
-        s.body.velocity.set(game.rnd.integerInRange(-200, 200), game.rnd.integerInRange(-200, 200));
+
+ for (var i = 0; i < 90; i++)
+ {
+     var s = this.sprites.create(this.rnd.integerInRange(100, 700), this.rnd.integerInRange(32, 200), 'bomb');
+     s.animations.add('bomb', [0, 1, 2, 3]);
+     s.play('bomb', 20, true);
+     s.body.velocity.set(this.rnd.integerInRange(-200, 200), this.rnd.integerInRange(-200, 200));
+ }
+
+this. sprites.setAll('body.collideWorldBounds', true);
+this.sprites.setAll('body.bounce.x', 1);
+this.sprites.setAll('body.bounce.y', 1);
+
+}
+
+function update(time, delta){
+
+if(this.arrow.D.isDown === true){
+this.player.x += 120 * (delta / 1000); 
+console.log("left");
+}
+if(this.arrow.A.isDown === true){
+this.player.x += -120 * (delta / 1000);
+console.log("right"); 
+}
+if (this.arrow.W.isDown === true){
+this.player.y += -120 * (delta / 1000);
+//this.player.setBounce(0.4);
+// this.player.setCollideWorldBounds(true);
+console.log("up");
+}
+if(this.arrow.S.isDown === true){
+this.player.y += 120 * (delta / 1000);
+console.log("down"); 
+}   
+}
+
+}
+
+
+
+
+}
+var config = {
+type: Phaser.AUTO,
+width: 680,
+height: 640,
+physics: {
+    default: 'arcade',
+    arcade: {
+       gravity: { y: 100 },
+       debug: false
     }
+},
+scene: [Boss] 
+   
+};
 
-    sprites.setAll('body.collideWorldBounds', true);
-    sprites.setAll('body.bounce.x', 1);
-    sprites.setAll('body.bounce.y', 1);
+// exit scene
 
-}
 
-function update() {
+var game = new Phaser.Game(config); 
 
-    game.physics.arcade.collide(sprites);
+// //////////////////////   koniec boss
 
-}
-
-// var game = new Phaser.Game(config); 
 
 
 </script>
 
 </body>
 </html>
-
