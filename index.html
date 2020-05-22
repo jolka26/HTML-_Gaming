@@ -177,205 +177,205 @@ this.map = [
            
     
     }
-    // this.physics.add.collider(this.player, this.door, (player) => { 
-        //    this.scene.start("Scene2");
+    this.physics.add.collider(this.player, this.door, (player) => { 
+           this.scene.start("Scene2");
 
-        // });
+        });
     
-    ///var exitDoor = scene.physics.add.overlap(this.player, this.door, exit);
+    /var exitDoor = scene.physics.add.overlap(this.player, this.door, exit);
 
 
 
-//////////////////////   koniec sceny1 podstawowej  
+////////////////////   koniec sceny1 podstawowej  
 
 
-//////////////////  SCENE2 
+////////////////  SCENE2 
 
 
-// class Scene2 extends Phaser.Scene {
+class Scene2 extends Phaser.Scene {
 
-// constructor(){
-//     super("Scene2");
+constructor(){
+    super("Scene2");
 
-//     var player;
-// // var stars;
-// var bombs= this.bombs;
-// // var platforms;
-// // var cursors;
-// // var score = 0;
-// // var gameOver = false;
-// // var scoreText;
+    var player;
+// var stars;
+var bombs= this.bombs;
+// var platforms;
+// var cursors;
+// var score = 0;
+// var gameOver = false;
+// var scoreText;
 
-// this.map = [
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
-// [1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
-// ]
-// }
+this.map = [
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1],
+[1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1],
+]
+}
 
-// preload(){
-//     this.load.image("sky", "dodatki/sky.png");
-//     this.load.image("box", "dodatki/block.png");
-//     this.load.image("ziemia", "dodatki/platform.png");
-//     this.load.image("star", "dodatki/star.png");
-//     this.load.image("exit2", "dodatki/exit.png");
-//     this.load.image("bomb", 'dodatki/bomb.png');
-//     this.load.spritesheet("dude", "dodatki/dude.png", { frameWidth: 30, frameHeight: 48 });
-// }
+preload(){
+    this.load.image("sky", "dodatki/sky.png");
+    this.load.image("box", "dodatki/block.png");
+    this.load.image("ziemia", "dodatki/platform.png");
+    this.load.image("star", "dodatki/star.png");
+    this.load.image("exit2", "dodatki/exit.png");
+    this.load.image("bomb", 'dodatki/bomb.png');
+    this.load.spritesheet("dude", "dodatki/dude.png", { frameWidth: 30, frameHeight: 48 });
+}
 
-// create (){
-//     let sky = this.add.image(400, 300, "sky").setScale(2);
-// //sky.destroy();
+create (){
+    let sky = this.add.image(400, 300, "sky").setScale(2);
+//sky.destroy();
 
-// this.blocks = this.physics.add.staticGroup();
+this.blocks = this.physics.add.staticGroup();
 
-// for (let i in this.map){
-//     for (let j in this.map){
-//         if (this.map[i][j] === 1)
+for (let i in this.map){
+    for (let j in this.map){
+        if (this.map[i][j] === 1)
 
-//     this.blocks.create((i * 42) + 25, (j * 32) + 14, "box").refreshBody();
+    this.blocks.create((i * 42) + 25, (j * 32) + 14, "box").refreshBody();
+    }
+
+}
+
+
+//ziemia,platformy, drzwi
+this.platforms = this.physics.add.staticGroup();
+
+this.platforms.create(400, 568, 'ziemia').setScale(2).refreshBody();
+this.platforms.create(600, 400, 'ziemia'); //srednia
+this.platforms.create(50, 250, 'ziemia'); //duza
+this.mala=this.platforms.create(750, 220, 'ziemia'); // mala
+this.player = this.physics.add.sprite(600, 515, "dude");
+
+this.physics.add.existing(this.player);
+this.door = this.physics.add.image(600, 30, "exit2");
+
+
+//gravity
+this.player.body.allowGravity = false;
+this.door.body.allowGravity = false;
+
+
+//  Input moving
+this.arrow = this.input.keyboard.addKeys("W, A, D, S");
+//this.cursors = this.input.keyboard.createCursorKeys();
+
+
+// bombs
+this.bombs = this.physics.add.group({
+key: 'bomb',
+repeat: 12,
+setXY: { x: 50, y: 10, stepX: 70 }
+});
+
+this.bombs.children.iterate(function (child) {
+
+
+// different bounce bombs
+child.setBounceY(Phaser.Math.FloatBetween(0.3, 0.9));
+//this.bombs.setBounce(0.4);
+//this.bombs.setCollideWorldBounds(true);
+
+
+
+});
+//  wynik
+this.scoreText = this.add.text(16, 16, 'AAA BOMBS!!', { fontSize: '32px', fill: '#fff' });
+
+this.physics.add.collider(this.bombs, this.platforms);
+this.physics.add.overlap(this.player, this.bombs, bombsAtt, null, this);
+
+
+}
+
+//     update(time, delta){
+
+//     if(this.arrow.D.isDown === true) {
+//     this.player.x += 220 * (delta / 1000); 
+//     //console.log("left");
 //     }
-
-// }
-
-
-// //ziemia,platformy, drzwi
-// this.platforms = this.physics.add.staticGroup();
-
-// this.platforms.create(400, 568, 'ziemia').setScale(2).refreshBody();
-// this.platforms.create(600, 400, 'ziemia'); //srednia
-// this.platforms.create(50, 250, 'ziemia'); //duza
-// this.mala=this.platforms.create(750, 220, 'ziemia'); // mala
-// this.player = this.physics.add.sprite(600, 515, "dude");
-
-// this.physics.add.existing(this.player);
-// this.door = this.physics.add.image(600, 30, "exit2");
-
-
-// //gravity
-// this.player.body.allowGravity = false;
-// this.door.body.allowGravity = false;
-
-
-// //  Input moving
-// this.arrow = this.input.keyboard.addKeys("W, A, D, S");
-// //this.cursors = this.input.keyboard.createCursorKeys();
-
-
-// // bombs
-// this.bombs = this.physics.add.group({
-// key: 'bomb',
-// repeat: 12,
-// setXY: { x: 50, y: 10, stepX: 70 }
-// });
-
-// this.bombs.children.iterate(function (child) {
-
-
-// // different bounce bombs
-// child.setBounceY(Phaser.Math.FloatBetween(0.3, 0.9));
-// //this.bombs.setBounce(0.4);
-// //this.bombs.setCollideWorldBounds(true);
-
-
-
-// });
-// //  wynik
-// this.scoreText = this.add.text(16, 16, 'AAA BOMBS!!', { fontSize: '32px', fill: '#fff' });
-
-// this.physics.add.collider(this.bombs, this.platforms);
-// this.physics.add.overlap(this.player, this.bombs, bombsAtt, null, this);
-
-
-// }
-
-// //     update(time, delta){
-
-// //     if(this.arrow.D.isDown === true) {
-// //     this.player.x += 220 * (delta / 1000); 
-// //     //console.log("left");
-// //     }
-// //     if(this.arrow.A.isDown === true){
-// //     this.player.x += -220 * (delta / 1000);
-// //     //console.log("right"); 
-// //     }
-// //     if (this.arrow.W.isDown === true){
-// //     this.player.y += -220 * (delta / 1000);
-// //     //console.log("up");
-// //     }
-// //     if(this.arrow.S.isDown === true){
-// //     this.player.y += 220 * (delta / 1000);
-// //     // console.log("down"); 
-// //     }   
-// //  }
-
-
-// }
-
-
-
-// var config = {
-// type: Phaser.AUTO,
-// width: 640,
-// height: 640,
-// physics: {
-//     default: 'arcade',
-//     arcade: {
-//        gravity: { y: 100 },
-//        debug: false
+//     if(this.arrow.A.isDown === true){
+//     this.player.x += -220 * (delta / 1000);
+//     //console.log("right"); 
 //     }
-// },
-// scene: [Scene1, Scene2] 
-// };
+//     if (this.arrow.W.isDown === true){
+//     this.player.y += -220 * (delta / 1000);
+//     //console.log("up");
+//     }
+//     if(this.arrow.S.isDown === true){
+//     this.player.y += 220 * (delta / 1000);
+//     // console.log("down"); 
+//     }   
+//  }
+
+
+}
+
+
+
+var config = {
+type: Phaser.AUTO,
+width: 640,
+height: 640,
+physics: {
+    default: 'arcade',
+    arcade: {
+       gravity: { y: 100 },
+       debug: false
+    }
+},
+scene: [Scene1, Scene2] 
+};
 
 
 
 
-// //FUNKCJA unikaj bomb
+//FUNKCJA unikaj bomb
 
-// function bombsAtt (player, bomb)
-// {
+function bombsAtt (player, bomb)
+{
 
-// bomb.disableBody(true, true);
-//  this.physics.add.collider(this.player, this.door, (player) => { 
-//            this.scene.start("Scene2");
+bomb.disableBody(true, true);
+ this.physics.add.collider(this.player, this.door, (player) => { 
+           this.scene.start("Scene2");
            
-//         });
-//         // this.physics.add.collider(this.player, this.door, (player) => { 
-//         //    this.scene.start("Scene1");
+        });
+        // this.physics.add.collider(this.player, this.door, (player) => { 
+        //    this.scene.start("Scene1");
            
-//         // });
+        // });
 
 
 
-// var x = (this.player.x < 200) ? Phaser.Math.Between(200, 400) : Phaser.Math.Between(0, 400);
+var x = (this.player.x < 200) ? Phaser.Math.Between(200, 400) : Phaser.Math.Between(0, 400);
 
-// var bomb = this.bombs.create(x, 16, 'bomb');
-// bomb.setBounce(0.5);
-// bomb.setCollideWorldBounds(true);
-// bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
-// bomb.allowGravity = true;
-// //     //this.scoreText.destroy();
+var bomb = this.bombs.create(x, 16, 'bomb');
+bomb.setBounce(0.5);
+bomb.setCollideWorldBounds(true);
+bomb.setVelocity(Phaser.Math.Between(-200, 200), 20);
+bomb.allowGravity = true;
+//     //this.scoreText.destroy();
 
 
-// }
+}
 
 
 
@@ -582,6 +582,102 @@ bomb.allowGravity = true;
 //     });
 
 // //////////////////////   koniec sceny3  
+
+
+
+//////////////////////////  BOSS LEVEL
+class Boss extends Phaser.Scene {
+
+constructor(){
+    super("Boss");
+
+function preload() {
+
+this.load.image('bomb', 'dodatki/bomb.png');
+this.load.image("sky", "dodatki/sky.png");
+this.load.spritesheet("dude", "dodatki/dude.png", { frameWidth: 30, frameHeight: 48 });
+}
+
+
+
+function create() {
+    let sky = this.add.image(400, 300, "sky").setScale(2);
+//sky.destroy();
+
+ this.sprites = this.add.physicsGroup(Phaser.Physics.ARCADE);
+ this.arrow = this.input.keyboard.addKeys("W, A, D, S");
+ this.player = this.physics.add.sprite(600, 515, "dude");
+
+ this.bomb = this.physics.add.group({
+key: 'bomb',
+repeat: 12,
+setXY: { x: 50, y: 10, stepX: 70 }
+});
+
+
+ for (var i = 0; i < 90; i++)
+ {
+     this.s = this.sprites.create(this.rnd.integerInRange(100, 700), this.rnd.integerInRange(32, 200), 'bomb');
+     this.s.animations.add('bomb', [0, 1, 2, 3]);
+     this.s.play('bomb', 20, true);
+     this.s.body.velocity.set(this.rnd.integerInRange(-200, 200), this.rnd.integerInRange(-200, 200));
+ }
+
+this. sprites.setAll('body.collideWorldBounds', true);
+this.sprites.setAll('body.bounce.x', 1);
+this.sprites.setAll('body.bounce.y', 1);
+
+}
+
+function update(time, delta){
+
+if(this.arrow.D.isDown === true){
+this.player.x += 120 * (delta / 1000); 
+console.log("left");
+}
+if(this.arrow.A.isDown === true){
+this.player.x += -120 * (delta / 1000);
+console.log("right"); 
+}
+if (this.arrow.W.isDown === true){
+this.player.y += -120 * (delta / 1000);
+//this.player.setBounce(0.4);
+// this.player.setCollideWorldBounds(true);
+console.log("up");
+}
+if(this.arrow.S.isDown === true){
+this.player.y += 120 * (delta / 1000);
+console.log("down"); 
+}   
+}
+
+}
+
+
+
+
+}
+var config = {
+type: Phaser.AUTO,
+width: 680,
+height: 640,
+physics: {
+    default: 'arcade',
+    arcade: {
+       gravity: { y: 100 },
+       debug: false
+    }
+},
+scene: [Boss] 
+   
+};
+
+// exit scene
+
+
+var game = new Phaser.Game(config); 
+
+// //////////////////////   koniec boss
 
 
    var game = new Phaser.Game(config); 
